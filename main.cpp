@@ -5,7 +5,8 @@
 #include <string>
 #include <algorithm>
 
-#define DEFAULT_LENGTH 10
+#define DEFAULT_LENGTH 15
+#define DEFAULT_DEVIATION 5
 
 bool is_int(const std::string &s) {
 	bool not_empty  = !s.empty();
@@ -36,7 +37,7 @@ int main(int argc, char **argv) {
 	// Use current time as seed so it is different each time
 	srand(time(0));
 
-	int random_offset = (rand() % 6) - 3;
+	int random_offset = (rand() % DEFAULT_DEVIATION * 2) - DEFAULT_DEVIATION;
 	
 	int pass_length;
 	// Check if there have been parsed args
